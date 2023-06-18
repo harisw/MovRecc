@@ -14,7 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html data-theme="cupcake" lang="en">
+      <head>
+        <title>Movierecc</title>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
