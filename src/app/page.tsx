@@ -5,6 +5,7 @@ import { getMovies } from '../api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import Navbar from '@/app/components/Navbar';
 
 const POSTER_PLACEHOLDERS = ['placeholder-1.png', 'placeholder-2.jpg', 'placeholder-3.jpg', 'placeholder-4.jpg'];
 
@@ -71,26 +72,9 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col gap-3 items-center justify-between px-10 py-10 pt-4">
       <div className="flex flex-col max-w-5xl items-center w-full">
-        <div className="z-10 w-full justify-between font-mono text-sm lg:flex gap-2 sticky top-0">
-          <h3 className="text-4xl font-bold flex w-full from-zinc-200 backdrop-blur-2xl">
-            MovieRecc
-          </h3>
-          <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-            <a
-              className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <h3 className="text-2xl font-semibold">
-                Harisw
-              </h3>
-            </a>
-          </div>
-        </div>
-
+      <Navbar />
         <Scrollbars
+          universal={true}
           style={{ height: '80vh' }}
           renderThumbVertical={renderThumb}
           renderTrackVertical={renderTrack}
